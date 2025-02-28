@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { refreshFilter } from "../reducers/filterReducer"
 
 const Filter = () => {
-  const filterValue = useSelector(state => state.Filter)
+  const filterValue = useSelector(state => state.filter)
   const dispatch = useDispatch()
   const handleChange = (event) => {
     // input-field value is in variable event.target.value
