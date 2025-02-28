@@ -1,21 +1,14 @@
-const reducer = (state = '', action) => {
-    switch (action.type) {
-        case 'REFRESH': {
-          const newContent = action.payload.newContent
-          return newContent
-        }
-        default:
-          return state
-      }
-}
+import { createSlice } from "@reduxjs/toolkit"
 
-export const refreshFilter = (newContent) => {
-  return {
-    type: 'REFRESH',
-    payload: {
-      newContent
+const filterSlice = createSlice({
+  name: 'filter',
+  initialState: '',
+  reducers: {
+    refreshFilter(state, action) {
+      return action.payload
     }
   }
-}
+})
 
-export default reducer
+export default filterSlice.reducer
+export const { refreshFilter } = filterSlice.actions
